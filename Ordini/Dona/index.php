@@ -73,7 +73,9 @@
 
   <script src="//code.jquery.com/jquery-3.6.0.js"></script>
 
-
+  <meta name="author" content="Alessio Civica">
+  <meta name="keywords" content="Donazione, Alimenti, Cibo">
+  <meta name="description" content="Sito per la donazione alimentare">
 </head>
 
 
