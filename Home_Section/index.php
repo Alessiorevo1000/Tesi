@@ -49,7 +49,7 @@ foreach ($array2 as $key => $value) {
 
 
     
-    <meta name="author" content="Alessio Civica e Paolo Luciano">
+    <meta name="author" content="Alessio Civica">
     <meta name="keywords" content="Donazione, Alimenti, Cibo">
     <meta name="description" content="Sito per la donazione alimentare">
 
