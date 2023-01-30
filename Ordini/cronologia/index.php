@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="cronologia.css">
     <title>Cronologia Ordini</title>
+
+    <meta name="author" content="Alessio Civica">
+    <meta name="keywords" content="Donazione, Alimenti, Cibo">
+    <meta name="description" content="Sito per la donazione alimentare">
 </head>
 
 <body style="background: rgba(0, 128, 0, 0.3)">
