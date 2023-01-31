@@ -1,6 +1,53 @@
+
+
+
+  <?php
+        session_start();
+
+        if ( isset($_SESSION["ricordami"])){
+          
+          if($_SESSION["ricordami"]==1){
+          $tempo=time()+(60*60*24);
+          setcookie("nome",  $_SESSION["nome"], $tempo, '/'); 
+          setcookie("cognome",  $_SESSION["cognome"], $tempo, '/');
+          setcookie("email",  $_SESSION["email"], $tempo, '/'); 
+          setcookie("password",  $_SESSION["password"], $tempo, '/'); 
+          setcookie("cap",  $_SESSION["cap"], $tempo, '/'); 
+          setcookie("cellulare",  $_SESSION["cellulare"], $tempo, '/'); 
+          setcookie("cf",  $_SESSION["cf"], $tempo, '/'); 
+          setcookie("città",  $_SESSION["città"], $tempo, '/'); 
+          setcookie("via",  $_SESSION["via"], $tempo, '/'); 
+          setcookie("regione",  $_SESSION["regione"], $tempo, '/'); 
+
+          }
+
+        }
+      
+        
+
+
+
+        
+
+?>
+
+<script>        // refresha la page una volta sola 
+if (performance.navigation.type === 1) {
+  sessionStorage.setItem('pageRefreshed', 'true');
+}
+if (sessionStorage.getItem('pageRefreshed')) {
+  sessionStorage.removeItem('pageRefreshed');
+} else {
+  location.reload();
+}
+</script>
+
 <?php
 //PHP relativo al caricamento dei dati dei Donat/Goal/Transazioni fatte ta tutti gli utenti.
-session_start();
+
+
+
+
 $dbconn = pg_connect("host=localhost dbname=LTW_DB port=5432 user=postgres password=password");
 $query = 'select tipologia.categoria, count(transazione.*)
     from ((
@@ -17,6 +64,8 @@ $dataPoints2 = array();
 foreach ($array2 as $key => $value) {
   array_push($dataPoints2, array("label" => $key, "y" => $value)); //creo il mio dataPoints per il grafico il quale è un array indicizzato da sottoarray del tipo "label"->Email, y->Count"
 }
+
+
 ?>
 
 
@@ -98,10 +147,10 @@ foreach ($array2 as $key => $value) {
               <div id="utente">
                 <?php
 
-
+                
                 if (!isset($_SESSION["loggato"])) {
 
-
+                  
                   echo "<div class='header-btn'>
                 <a href='..\Registrazione_Modifica_Login\login\index.php' class='main-btn btn-hover'>Accedi</a>
                 </div>";
@@ -216,8 +265,13 @@ foreach ($array2 as $key => $value) {
     </div>
   </div>
 
-  
 
+
+
+   <?php
+    print_r($_SESSION);
+    print_r($_COOKIE);
+   ?>
   
 
 
@@ -380,6 +434,14 @@ foreach ($array2 as $key => $value) {
     <h1 class="display-1">I nostri obiettivi:</h1>
 
     <?php
+    print_r($_COOKIE);
+    $cookie_value = $_COOKIE["ricordami"];
+
+    // Mostra il valore del cookie
+    echo "Il valore del cookie è: " . $cookie_value;
+    
+
+
     $dbconn = pg_connect("host=localhost dbname=LTW_DB port=5432 user=postgres password=password");
 
     $query5 = 'select tipologia.categoria, sum(transazione.quantità)

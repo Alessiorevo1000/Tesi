@@ -34,6 +34,7 @@
                 $_SESSION['nome'] = $tuple["nome"];
 
                 if (isset($_POST['rememberMe'])) {
+                    $_SESSION['ricordami'] = 1;
                     $query3 = 'INSERT INTO identificativo values ($1,$2)';
                     $result = pg_query_params($dbconn, $query3, array(session_id(), $tuple["codice"]));
                 } else {
@@ -50,7 +51,7 @@
                 }
 
 
-                session_commit();
+                //session_commit();
                 header("location: ../../Home_Section/index.php ");
             }
         } else {
