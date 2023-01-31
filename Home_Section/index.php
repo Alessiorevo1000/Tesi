@@ -18,16 +18,11 @@
           setcookie("città",  $_SESSION["città"], $tempo, '/'); 
           setcookie("via",  $_SESSION["via"], $tempo, '/'); 
           setcookie("regione",  $_SESSION["regione"], $tempo, '/'); 
-
+          setcookie("codice",  $_SESSION["codice"], $tempo, '/'); 
           }
 
         }
-      
-        
-
-
-
-        
+    
 
 ?>
 
@@ -36,7 +31,12 @@
 <?php
 //PHP relativo al caricamento dei dati dei Donat/Goal/Transazioni fatte ta tutti gli utenti.
 
-
+if(isset($_COOKIE["nome"])){
+  $nome=$_COOKIE["nome"];
+}
+if(isset($_SESSION["nome"])){
+  $nome=$_SESSION["nome"];
+}
 
 
 $dbconn = pg_connect("host=localhost dbname=LTW_DB port=5432 user=postgres password=password");
@@ -139,16 +139,16 @@ foreach ($array2 as $key => $value) {
                 <?php
 
                 
-                if (!isset($_SESSION["loggato"])) {
+                if (!isset($_SESSION["loggato"]) && !isset($_COOKIE["email"])) {
 
                   
                   echo "<div class='header-btn'>
                 <a href='..\Registrazione_Modifica_Login\login\index.php' class='main-btn btn-hover'>Accedi</a>
                 </div>";
                 } else {
-                  if ($_SESSION["loggato"] == 1 && isset($_SESSION["nome"])) {
+                  if (isset($_SESSION["loggato"]) && isset($_SESSION["nome"]) || isset($_COOKIE["nome"]) ) {
                     echo "<div id='testo'>Ciao,";
-                    print_r($_SESSION["nome"]);
+                    print_r($nome);
                     echo "</div> ";
                     echo "<div id='Settings' class='nav-item dropdown'>
                       <a class='nav-link dropdown-toggle' data-bs-toggle='dropdown' href='#' role='a' aria-expanded='false'>Impostazioni</a>

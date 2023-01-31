@@ -17,16 +17,23 @@
         var dati =
             <?php
             session_start();
-            if (!isset($_SESSION["loggato"])) {
+            if (!isset($_SESSION["loggato"]) && !isset($_COOKIE["nome"])) {
                 header("location: ../../Home_Section/index.php");
                 return;
+            }
+
+            if (isset($_SESSION["codice"])){
+                $codice=$_SESSION["codice"];
+            }
+            if (isset($_COOKIE["codice"])){
+                $codice=$_COOKIE["codice"];
             }
             $dbconn = pg_connect("host=localhost dbname=LTW_DB port=5432 user=postgres password=password");
             $query = 'SELECT prodotto.nome, tipologia.*,transazione.scadenza,transazione.quantità, transazione.momento, transazione.via,transazione.ritiro
                       from tipologia, transazione inner join prodotto on transazione.codprodotto=prodotto.codice
                       where codcliente=$1 and tipologia.categoria=prodotto.codtipologia
                       ORDER BY transazione.momento DESC';
-            $result = pg_query_params($dbconn, $query, array($_SESSION["codice"])); //Ci prendiamo la TABELLA risultante dalla query
+            $result = pg_query_params($dbconn, $query, array($codice)); //Ci prendiamo la TABELLA risultante dalla query
             $array2 = array();
             while ($tuple = pg_fetch_array($result, null, PGSQL_ASSOC)) {
                 $appoggio = array_values($tuple);
@@ -48,7 +55,7 @@
                           from tipologia, transazione inner join prodotto on transazione.codprodotto=prodotto.codice
                           where codcliente=$1 and tipologia.categoria=prodotto.codtipologia
                           group by tipologia.categoria';
-                $result = pg_query_params($dbconn, $query, array($_SESSION["codice"])); //Ci prendiamo la TABELLA risultante dalla query
+                $result = pg_query_params($dbconn, $query, array($codice)); //Ci prendiamo la TABELLA risultante dalla query
                 $array2 = array();
                 while ($tuple = pg_fetch_array($result, null, PGSQL_ASSOC)) { //Scorriamo tutte le righe della tabella risultante della query prendendone i valori.
                     $appoggio = array_values($tuple);
