@@ -137,7 +137,7 @@
         <button id="invia" type="submit" class="btn btn-danger" name="submit">Accedi</button>
 
         <div class="mb-2 mt-4">
-            <a id="registrati" href="../Registrazione/index.php">Prima volta? clicca qui</a>
+            <a id="registrati" href="../Registrazione/index.php">Registrati ora!</a>
         </div>
 
     </form>
