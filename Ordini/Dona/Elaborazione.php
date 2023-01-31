@@ -2,9 +2,16 @@
 session_start();
 
 //Se questa pagina viene lanciata manualmente, senza che ci siano Transazioni da elaborare o arrivandoci tramite link...vengo ributtato nella Home.
-if (!isset($_SESSION["loggato"]) || (!isset($_GET["dati"]))) {
+if ((!isset($_SESSION["loggato"])) && (!isset($_COOKIE["nome"])) || !isset($_GET['dati'])  ) {
     header("location: ../../Home_Section/index.php");
     return;
+}
+if (isset($_SESSION["codice"])){
+    $loggato = $_SESSION["codice"];
+}
+
+if (isset($_COOKIE["codice"])){
+    $loggato = $_COOKIE["codice"];
 }
 $dbconn = pg_connect("host=localhost dbname=LTW_DB
     port= 5432 user=postgres password=password");
@@ -60,7 +67,7 @@ for ($i = 0; $i < count($arr) - 2; $i++) {
 
     //Inserisco nel DB i dati inerenti alla transazione del prodotto (cosa iterata per ogni prodotto del carrello):
     $query = 'INSERT INTO public.transazione(momento, codcliente, codprodotto,quantità,scadenza,via, ritiro, tags) VALUES ($1, $2, $3,$4,$5,$6,$7, $8)';
-    $Inserimento = pg_query_params($dbconn, $query, array(date("Y-m-d"), $_SESSION['codice'], $codiceProdotto, $quantita, $ScadProd, $indirizzo, $dataCon, $tag));
+    $Inserimento = pg_query_params($dbconn, $query, array(date("Y-m-d"), $loggato, $codiceProdotto, $quantita, $ScadProd, $indirizzo, $dataCon, $tag));
 }
 if ($result) {
     $_SESSION["success"]=1;

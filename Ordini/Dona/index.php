@@ -84,9 +84,16 @@
 
   <?php
   session_start();
-  if (!isset($_SESSION["loggato"])) {
+  if (!isset($_SESSION["loggato"]) && (!isset($_COOKIE["nome"]))) {
     header("location: ../../Home_Section/index.php");
   }
+  if (isset($_SESSION["codice"])){
+    $loggato = $_SESSION["codice"];
+}
+
+if (isset($_COOKIE["codice"])){
+    $loggato = $_COOKIE["codice"];
+}
   ?>
   <script src="//code.jquery.com/jquery-3.6.0.js"></script>
 
