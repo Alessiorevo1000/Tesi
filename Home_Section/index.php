@@ -31,16 +31,7 @@
 
 ?>
 
-<script>        // refresha la page una volta sola 
-if (performance.navigation.type === 1) {
-  sessionStorage.setItem('pageRefreshed', 'true');
-}
-if (sessionStorage.getItem('pageRefreshed')) {
-  sessionStorage.removeItem('pageRefreshed');
-} else {
-  location.reload();
-}
-</script>
+
 
 <?php
 //PHP relativo al caricamento dei dati dei Donat/Goal/Transazioni fatte ta tutti gli utenti.
