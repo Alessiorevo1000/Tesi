@@ -139,7 +139,7 @@ foreach ($array2 as $key => $value) {
               <div id="utente">
                 <?php
           
-                
+                /*
                 if (!isset($_SESSION["loggato"]) && !isset($_COOKIE["email"])) {
 
                   
@@ -162,7 +162,7 @@ foreach ($array2 as $key => $value) {
                   </div>";
                   }
                 }
-
+*/
                 ?>
               </div>
               <!-- navbar collapse -->
