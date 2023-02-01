@@ -29,7 +29,7 @@
 
 
 <?php
-/*
+
 //PHP relativo al caricamento dei dati dei Donat/Goal/Transazioni fatte ta tutti gli utenti.
 
 if(isset($_COOKIE["nome"])){
@@ -57,7 +57,7 @@ foreach ($array2 as $key => $value) {
   array_push($dataPoints2, array("label" => $key, "y" => $value)); //creo il mio dataPoints per il grafico il quale è un array indicizzato da sottoarray del tipo "label"->Email, y->Count"
 }
 
-*/
+
 ?>
 
 
@@ -138,7 +138,7 @@ foreach ($array2 as $key => $value) {
 
               <div id="utente">
                 <?php
-            /*
+          
                 
                 if (!isset($_SESSION["loggato"]) && !isset($_COOKIE["email"])) {
 
@@ -162,7 +162,7 @@ foreach ($array2 as $key => $value) {
                   </div>";
                   }
                 }
-*/
+
                 ?>
               </div>
               <!-- navbar collapse -->
