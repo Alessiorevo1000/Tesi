@@ -12,5 +12,9 @@
 <body>
 <a href="prova.php">1</a> 
 
+ <?php  
+echo realpath("./");
+?>  
+<h1>mio</h1>
 </body>
 </html>
