@@ -14,6 +14,8 @@
 
  <?php  
 echo realpath("./");
+echo realpath(".");
+echo realpath("./Home_Section");
 ?>  
 <h1>mio</h1>
 </body>
