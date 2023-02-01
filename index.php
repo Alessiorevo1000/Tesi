@@ -12,13 +12,38 @@
 <body>
 <a href="Home_Section/index.php">1</a> 
 <?php
- $dbconn = pg_connect("host=localhost12.postgres.database.azure.com dbname=localhost12 port=5432 user=postgres password=Password1");
- $query = 'select *
-           from tipologia';
- $result = pg_query_params($dbconn, $query, array()); //Ci prendiamo la TABELLA risultante dalla query
- while ($tuple = pg_fetch_array($result, null, PGSQL_ASSOC)) { //Scorriamo tutte le righe della tabella e le convertiamo in array singoli...
-   print_r($tuple);
- }
+
+// Initialize connection variables.
+$host = 'localhost12.postgres.database.azure.com';
+$database = 'localhost12';
+$user ='postgres@localhost12';
+$password = 'Password1';
+
+// Initialize connection object.
+$connection = pg_connect("host=localhost12.postgres.database.azure.com port=5432 dbname=localhost12 user=postgres@localhost12 password=Password1 sslmode=require")
+            or die("Failed to create connection to database: ". pg_last_error(). "<br/>");
+
+print "Successfully created connection to database. <br/>";
+
+// Perform some SQL queries over the connection.
+$query = "SELECT * from tipologia";
+$result_set = pg_query($connection, $query) 
+    or die("Encountered an error when executing given sql statement: ". pg_last_error(). "<br/>");
+while ($row = pg_fetch_row($result_set))
+{
+    print "Data row = ($row[0], $row[1], $row[2]). <br/>";
+}
+
+// Free result_set
+pg_free_result($result_set);
+
+// Closing connection
+pg_close($connection);
+
+
+
+
+
 
 ?>
 
