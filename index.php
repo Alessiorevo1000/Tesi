@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello Porco</h1>
+    <?php
+header("location: /Home_Section/index.php");
+?>
 </body>
 </html>
