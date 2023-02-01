@@ -1,2 +1,4 @@
-INSERT INTO tipologia(categoria)
-Values('pasta')
+
+
+
+select * From tipologia
