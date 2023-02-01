@@ -10,7 +10,7 @@
 
 </head>
 <body>
-<a href="/Home_Section/index.php">1</a> 
+<a href="/Home_Section">1</a> 
 <a href="./Home_Section/index.php">2</a> 
 <a href="https://nomesito.azurewebsites.net/Home_Section/index.php">3</a> 
 </body>
