@@ -38,7 +38,7 @@ if(isset($_COOKIE["nome"])){
 if(isset($_SESSION["nome"])){
   $nome=$_SESSION["nome"];
 }
-
+/*
 
 $dbconn = pg_connect("host=localhost dbname=LTW_DB port=5432 user=postgres password=password");
 $query = 'select tipologia.categoria, count(transazione.*)
@@ -57,7 +57,7 @@ foreach ($array2 as $key => $value) {
   array_push($dataPoints2, array("label" => $key, "y" => $value)); //creo il mio dataPoints per il grafico il quale è un array indicizzato da sottoarray del tipo "label"->Email, y->Count"
 }
 
-
+*/
 ?>
 
 
