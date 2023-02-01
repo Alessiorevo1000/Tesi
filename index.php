@@ -1,7 +1,7 @@
 
 
 
-  <?php
+  <?php /*
         session_start();
 
         if ( isset($_SESSION["ricordami"])){
@@ -22,13 +22,14 @@
           }
 
         }
-    
+    */
 
 ?>
 
 
 
 <?php
+/*
 //PHP relativo al caricamento dei dati dei Donat/Goal/Transazioni fatte ta tutti gli utenti.
 
 if(isset($_COOKIE["nome"])){
@@ -56,7 +57,7 @@ foreach ($array2 as $key => $value) {
   array_push($dataPoints2, array("label" => $key, "y" => $value)); //creo il mio dataPoints per il grafico il quale è un array indicizzato da sottoarray del tipo "label"->Email, y->Count"
 }
 
-
+*/
 ?>
 
 
@@ -137,7 +138,7 @@ foreach ($array2 as $key => $value) {
 
               <div id="utente">
                 <?php
-
+            /*
                 
                 if (!isset($_SESSION["loggato"]) && !isset($_COOKIE["email"])) {
 
@@ -161,7 +162,7 @@ foreach ($array2 as $key => $value) {
                   </div>";
                   }
                 }
-
+*/
                 ?>
               </div>
               <!-- navbar collapse -->
@@ -186,13 +187,13 @@ foreach ($array2 as $key => $value) {
 
     <div class="slogan">
       <p id="TestoSlogan">"Your donation is all They Need"</p>
-      <input id="success" value="<?php
+      <input id="success" value="<?php   /*
         if (isset($_SESSION["success"])) {
           if ($_SESSION["success"] == 1) {
             echo 1; 
             $_SESSION["success"]=[];
           }
-        } ?>"
+        }  */ ?>"
       />
     </div>
 
@@ -273,7 +274,7 @@ foreach ($array2 as $key => $value) {
         <div class="grid-item">
           <p class="textStat">QUANTITA' DI DONAZIONI (Kg): </p>
           <p class="datoStat display-n">
-            <?php
+            <?php /*
             $dbconn = pg_connect("host=localhost dbname=LTW_DB port=5432 user=postgres password=password");
             $query = 'select sum(quantità)
                       from ((transazione inner join prodotto on transazione.codprodotto=prodotto.codice) inner join tipologia on prodotto.codtipologia = tipologia.categoria)';
@@ -281,6 +282,7 @@ foreach ($array2 as $key => $value) {
             while ($tuple = pg_fetch_array($result, null, PGSQL_ASSOC)) { //Scorriamo tutte le righe della tabella e le convertiamo in array singoli...
               print_r($tuple["sum"]);
             }
+            */
             ?>
           </p>
 
@@ -290,12 +292,14 @@ foreach ($array2 as $key => $value) {
           <p class="textStat">NUMERO DI DONAZIONI EFFETTUATE: </p>
           <p class="datoStat display-n">
             <?php
+            /*
             $dbconn = pg_connect("host=localhost dbname=LTW_DB port=5432 user=postgres password=password");
             $query = 'select count(*) from transazione';
             $result = pg_query_params($dbconn, $query, array()); //Ci prendiamo la TABELLA risultante dalla query
             while ($tuple = pg_fetch_array($result, null, PGSQL_ASSOC)) { //Scorriamo tutte le righe della tabella e le convertiamo in array singoli...
               print_r($tuple["count"]);
             }
+            */
             ?>
           </p>
         </div>
@@ -421,7 +425,7 @@ foreach ($array2 as $key => $value) {
     <h1 class="display-1">I nostri obiettivi:</h1>
 
     <?php
-
+    /*
     
 
 
@@ -476,7 +480,7 @@ foreach ($array2 as $key => $value) {
     if ($percfrutta > 100) {
       $percfrutta = 100;
     }
-
+*/
     ?>
 
 
@@ -488,27 +492,27 @@ foreach ($array2 as $key => $value) {
           <p class="textStat">PASTA:</p>
           <div id="anelloP" class="semi-donut margin" style="--percentage :<?php
             echo ($percpasta) ?>; --fill: #ebdc1c ;">
-            <?php echo (round($percpasta)) ?>%
+            <?php /* echo (round($percpasta)) */?>%
           </div>
-          <p id="paste" class="textStat" style="color: orange;"><?php echo (round($percpasta)) ?>% </p>
-          <p class="textStat">pasta donata: <?php echo $pasta ?> su <?php echo $obpasta ?> kg</p>
+          <p id="paste" class="textStat" style="color: orange;"><?php /* echo (round($percpasta))*/ ?>% </p>
+          <p class="textStat">pasta donata: <?php /* echo $pasta */?> su <?php /*echo $obpasta*/ ?> kg</p>
         </div>
         <div class="grid-item">
           <p class="textStat">VERDURE:</p>
           <div id="anelloV" class="semi-donut margin" style="--percentage :<?php
             echo ($percverdura) ?>; --fill: #17dc49 ;">
-            <?php echo (round($percverdura)) ?>%
+            <?php /* echo (round($percverdura)) */?>%
           </div>
-          <p id="vegetable" class="textStat" style="color: green;"><?php echo (round($percverdura)) ?>% </p>
-          <p class="textStat">verdura donata: <?php echo $verdura ?> su <?php echo $obverdura ?> kg</p>
+          <p id="vegetable" class="textStat" style="color: green;"><?php /* echo (round($percverdura)) */?>% </p>
+          <p class="textStat">verdura donata: <?php /*echo $verdura ?> su <?php echo $obverdura */?> kg</p>
         </div>
         <div class="grid-item">
           <p class="textStat">FRUTTA:</p>
-          <div id="anelloF" class="semi-donut margin" style="--percentage :<?php echo ($percfrutta) ?>; --fill: #fa0a07 ;">
-            <?php echo (round($percfrutta)) ?>%
+          <div id="anelloF" class="semi-donut margin" style="--percentage :<?php /* echo ($percfrutta) */ ?>; --fill: #fa0a07 ;">
+            <?php /* echo (round($percfrutta)) */ ?>%
           </div>
-          <p id="fruit" class="textStat" style="color: red;"><?php echo (round($percfrutta)) ?>% </p>
-          <p class="textStat">frutta donata: <?php echo $frutta ?> su <?php echo $obfrutta ?> kg</p>
+          <p id="fruit" class="textStat" style="color: red;"><?php /*echo (round($percfrutta)) */?>% </p>
+          <p class="textStat">frutta donata: <?php /* echo $frutta ?> su <?php echo $obfrutta*/ ?> kg</p>
         </div>
 
       </div>
