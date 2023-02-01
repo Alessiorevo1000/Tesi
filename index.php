@@ -10,8 +10,10 @@
 
 </head>
 <body>
-<a href="prova.php">1</a> 
-<a href="/home/site/wwwroot/home/site/wwwroot/home/site/wwwroot/Home_Section/index.php">sito</a> 
+<a href="prova.php">1</a>
+<br>
+<a href="home/site/wwwroot/Home_Section/">sito</a> 
+<a href="home/site/wwwroot/Home_Section/index.php">sito</a> 
  <?php  
 echo realpath("./");
 echo realpath(".");
