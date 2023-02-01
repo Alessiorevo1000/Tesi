@@ -10,7 +10,6 @@
 
 </head>
 <body>
-<a href="C:\Users\Aless\OneDrive\Desktop\Progetto Tesi\mio\prova.php">1</a> 
-
+<a href="C:\Users\Aless\OneDrive\Desktop\Progetto Tesi\mio\index.php">1</a>  
 </body>
 </html>
