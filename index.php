@@ -13,6 +13,9 @@
 <a href="prova.php">1</a>
 <br>
 <a href="home/site/wwwroot/Home_Section/">sito</a> 
+<br>
+<a href="./Home_Section/index.php">sito</a> 
+<br>
 <a href="home/site/wwwroot/Home_Section/index.php">sito</a> 
  <?php  
 echo realpath("./");
