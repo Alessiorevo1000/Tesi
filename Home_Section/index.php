@@ -259,10 +259,6 @@ foreach ($array2 as $key => $value) {
 
 
 
-   <?php
-    print_r($_SESSION);
-    print_r($_COOKIE);
-   ?>
   
 
 
@@ -425,11 +421,7 @@ foreach ($array2 as $key => $value) {
     <h1 class="display-1">I nostri obiettivi:</h1>
 
     <?php
-    print_r($_COOKIE);
-    $cookie_value = $_COOKIE["ricordami"];
 
-    // Mostra il valore del cookie
-    echo "Il valore del cookie è: " . $cookie_value;
     
 
 
