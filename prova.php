@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     
-    <title>Document</title>
+    <title>prova</title>
 
 </head>
 <body>
-<a href="C:\Users\Aless\OneDrive\Desktop\Progetto Tesi\mio\index.php">1</a>  
+<a href="index.php">1</a>  
 </body>
 </html>
