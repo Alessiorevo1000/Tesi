@@ -20,7 +20,7 @@ $user ='postgres@localhost12';
 $password = 'Password1';
 
 // Initialize connection object.
-$connection = pg_connect("host=localhost12.postgres.database.azure.com port=5432 dbname=localhost12 user=postgres@localhost12 password=Password1 sslmode=require")
+$connection = pg_connect("host=localhost12.postgres.database.azure.com port=5432 dbname=postgres user=postgres@localhost12 password=Password1 sslmode=require")
             or die("Failed to create connection to database: ". pg_last_error(). "<br/>");
 
 print "Successfully created connection to database. <br/>";
