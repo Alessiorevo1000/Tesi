@@ -31,7 +31,7 @@ $result_set = pg_query($connection, $query)
     or die("Encountered an error when executing given sql statement: ". pg_last_error(). "<br/>");
 while ($row = pg_fetch_row($result_set))
 {
-    print "Data row = ($row[0], $row[1], $row[2]). <br/>";
+    print "Data row = ($row[0]). <br/>";
 }
 
 // Free result_set
