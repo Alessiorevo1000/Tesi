@@ -11,7 +11,7 @@
 
         $query = 'SELECT * from utente where email=$1 AND pswd=$2';
         $result = pg_query_params($dbconn, $query, array($email, $password));
-        $flag = false;
+        $flag = true;
 
         if ($tuple = pg_fetch_array($result, null, PGSQL_ASSOC)) { //se esiste un email
 
