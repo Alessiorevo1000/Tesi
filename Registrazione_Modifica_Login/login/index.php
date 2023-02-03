@@ -51,6 +51,7 @@
 
 
                 //session_commit();
+                $flag=true;
                 header("location: ../../Home_Section/index.php ");
             }
         } else {
@@ -147,11 +148,7 @@
     // Rendo o nascondo il testo
     
 
-    var variabile = "<?php if ($tupleRemember) {
-                                echo true;
-                            } else {
-                                echo false;
-                            } ?>";
+
         var flagJS = "<?php echo $flag; ?>";
         if (flagJS == false) {
             $("#errore").show();
