@@ -142,12 +142,12 @@
     </form>
     <script>
         //Piccolo Scriptino per controllare la correttezza di Password ed Email:
-        var variabile = "<?php if ($tupleRemember) {
+        $variabile = "<?php if ($tupleRemember) {
                                 echo true;
                             } else {
                                 echo false;
                             } ?>";
-        var flagJS = "<?php echo $flag; ?>";
+        var flagJS = "<?php echo $variabile; ?>";
         if (flagJS == false) {
             $("#errore").show();
             $("#errore").text("*Email o password errati!*");
