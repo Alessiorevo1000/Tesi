@@ -41,7 +41,7 @@ pg_free_result($result_set);
 pg_close($connection);
 
 
-header("location: ../../Home_Section/index.php");
+header("location: ./Home_Section/index.php");
 
 
 
