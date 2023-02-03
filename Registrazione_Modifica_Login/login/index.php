@@ -76,7 +76,6 @@
 
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
     <title>Login</title>
     <meta charset="UTF-8">
