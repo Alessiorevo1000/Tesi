@@ -20,3 +20,5 @@ togglePassword.addEventListener("click", function () {
     // Cambio l'icona dell'occhio
     this.classList.toggle("bi-eye");
 });
+
+
