@@ -4,7 +4,7 @@
 session_start();
 
         
-if (!isset($_SESSION["loggato"])){
+if (!isset($_SESSION["loggato"]) || !isset($_COOKIE["nome"])){
         header("location: ../../Home_Section/index.php");
         return;
 }
@@ -21,15 +21,21 @@ $città=$_POST["città"];
 $via=$_POST["via"];
 $regione=$_POST["regione"];
 
+if (isset($_SESSION["codice"])){
+        $codice=$_SESSION["codice"];
+}
+if (isset($_COOKIE["codice"])){
+        $codice=$_COOKIE["codice"];
+}
 
-$dbconn = pg_connect("host=localhost dbname=LTW_DB
-        port= 5432 user=postgres password=password");
+
+$dbconn = pg_connect("host=localhost12.postgres.database.azure.com port=5432 dbname=postgres user=postgres@localhost12 password=Password1 sslmode=require");
         
 
 
 $query2= 'UPDATE utente SET nome=$1,cognome=$2,email=$3,pswd=$4,cap=$5,cellulare=$6,cf=$7,città=$8,via=$9,regione=$10  WHERE codice=$11';
 
-$result = pg_query_params($dbconn, $query2, array($nome,$cognome,$email,$password,$cap,$cellulare,$cf,$città,$via,$regione,$_SESSION["codice"]));
+$result = pg_query_params($dbconn, $query2, array($nome,$cognome,$email,$password,$cap,$cellulare,$cf,$città,$via,$regione,$codice));
      
 if ($result){
         $modifica = 1;

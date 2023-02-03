@@ -28,7 +28,7 @@
             if (isset($_COOKIE["codice"])){
                 $codice=$_COOKIE["codice"];
             }
-            $dbconn = pg_connect("host=localhost dbname=LTW_DB port=5432 user=postgres password=password");
+            $dbconn = pg_connect("host=localhost12.postgres.database.azure.com port=5432 dbname=postgres user=postgres@localhost12 password=Password1 sslmode=require");
             $query = 'SELECT prodotto.nome, tipologia.*,transazione.scadenza,transazione.quantità, transazione.momento, transazione.via,transazione.ritiro
                       from tipologia, transazione inner join prodotto on transazione.codprodotto=prodotto.codice
                       where codcliente=$1 and tipologia.categoria=prodotto.codtipologia
@@ -50,7 +50,7 @@
         <div class="row" id="riga">
             <div class="col-6" id="statistiche">
                 <?php
-                $dbconn = pg_connect("host=localhost dbname=LTW_DB port=5432 user=postgres password=password");
+                $dbconn = pg_connect("host=localhost12.postgres.database.azure.com port=5432 dbname=postgres user=postgres@localhost12 password=Password1 sslmode=require");
                 $query = 'SELECT sum(transazione.quantità), tipologia.categoria
                           from tipologia, transazione inner join prodotto on transazione.codprodotto=prodotto.codice
                           where codcliente=$1 and tipologia.categoria=prodotto.codtipologia

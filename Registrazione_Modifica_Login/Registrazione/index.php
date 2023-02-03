@@ -1,8 +1,7 @@
 <?php
 session_start();
 if(isset($_POST['submit'])){      
-    $dbconn = pg_connect("host=localhost dbname=LTW_DB
-    port= 5432 user=postgres password=password");
+    $dbconn = pg_connect("host=localhost12.postgres.database.azure.com port=5432 dbname=postgres user=postgres@localhost12 password=Password1 sslmode=require");
 
     $email = $_POST["email"];
     $query = 'SELECT * from utente where email=$1';

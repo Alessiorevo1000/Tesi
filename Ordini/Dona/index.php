@@ -1,6 +1,6 @@
 <!-- carciamento dati per il riempimento dei grafici -->
 <?php
-    $dbconn = pg_connect("host=localhost dbname=LTW_DB port=5432 user=postgres password=password");
+    $dbconn = pg_connect("host=localhost12.postgres.database.azure.com port=5432 dbname=postgres user=postgres@localhost12 password=Password1 sslmode=require");
     $query5 = 'select tipologia.categoria, sum(transazione.quantità)
     from ((
     transazione inner join prodotto on transazione.codprodotto=prodotto.codice

@@ -2,8 +2,7 @@
     session_start();
 
 
-    $dbconn = pg_connect("host=localhost dbname=LTW_DB
-                port= 5432 user=postgres password=password");
+    $dbconn = pg_connect("host=localhost12.postgres.database.azure.com port=5432 dbname=postgres user=postgres@localhost12 password=Password1 sslmode=require");
 
 
     if (isset($_POST["submit"]) || isset($_POST["email"])) {
