@@ -8,9 +8,10 @@
     if (isset($_POST["submit"]) || isset($_POST["email"])) {
         $email = $_POST["email"];
         $password = $_POST["pswd"];
-
+       //Apertura connessione al database
         $query = 'SELECT * from utente where email=$1 AND pswd=$2';
         $result = pg_query_params($dbconn, $query, array($email, $password));
+        //chiusura della connessione al database
         $flag = true;
 
         if ($tuple = pg_fetch_array($result, null, PGSQL_ASSOC)) { //se esiste un email
