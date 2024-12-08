@@ -1,1 +1,1 @@
-You can read my RELAZIONE.PDF, you will see all detailes of my thesis in Computer Science Bachelor's in Sapienza.
+You can read my RELAZIONE.PDF to view the details of my thesis in Computer Science Bachelor's in Sapienza.
